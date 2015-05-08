@@ -14,6 +14,6 @@ Plugin for Feature #5816 in Redmine
 #What it does
     The plugin alters the view for creating a new issue. 
     It only allows a user to set a predetermined set of statuses. 
-    It also adds a new Issue Status called initial, which is also set to be the default status.
+    It adds a new Issue Status called initial, which is also set to be the default status.
     
     The initial statuses can be set via the workflow settings menu. 
