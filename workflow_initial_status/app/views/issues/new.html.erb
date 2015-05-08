@@ -8,7 +8,7 @@
   <%= hidden_field_tag 'copy_from', params[:copy_from] if params[:copy_from] %>
   <div class="box tabular">
     <div id="all_attributes">
-    <%= render :partial => 'issues/form', :locals => {:f => f} %>
+    <%= render :partial => 'issues/newform', :locals => {:f => f} %>
     </div>
 
     <% if @copy_from && @copy_from.attachments.any? %>
