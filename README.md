@@ -10,6 +10,10 @@ Plugin for Feature #5816 in Redmine
     Run the plugin migrations rake db:migrate_plugins
 
     Restart your Redmine web servers
+    
+    You will need to add Initial to your workflow. To see it you need to uncheck:
+    "Only display statuses that are used by this tracker" on the workflow menu.
+    From there you can add all the statuses you want to be settable on creation.
 
 #What it does
     The plugin alters the view for creating a new issue. 
