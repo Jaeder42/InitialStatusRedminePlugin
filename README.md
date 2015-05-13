@@ -22,4 +22,5 @@ Plugin for Feature #5816 in Redmine
     
     The initial statuses can be set via the workflow settings menu. 
     
-    The plugin has only been tested on Redmine 2.5.2, if you have issues on a different version please let me know.
+    The plugin has only been tested on Redmine 2.5.2, 
+    if you have issues on a different version please let me know.
