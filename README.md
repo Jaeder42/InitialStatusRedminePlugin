@@ -21,3 +21,5 @@ Plugin for Feature #5816 in Redmine
     It adds a new Issue Status called initial, which is also set to be the default status.
     
     The initial statuses can be set via the workflow settings menu. 
+    
+    The plugin has only been tested on Redmine 2.5.2, if you have issues on a different version please let me know.
