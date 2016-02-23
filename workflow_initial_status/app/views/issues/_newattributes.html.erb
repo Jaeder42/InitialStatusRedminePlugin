@@ -5,6 +5,7 @@
 <div class="splitcontentleft">
  
 <% if @issue.safe_attribute?('status_id') && @allowed_statuses.present? %>
+ 
   <%@allowed_statuses.shift%>
 <p><%= f.select :status_id, (@allowed_statuses.collect {|p| [p.name, p.id]}), {:required => true},
                 :onchange => "updateIssueFrom('#{escape_javascript project_issue_form_path(@project, :id => @issue, :format => 'js')}')" %></p>
@@ -18,8 +19,16 @@
 <% end %>
 
 <% if @issue.safe_attribute? 'assigned_to_id' %>
-<p><%= f.select :assigned_to_id, principals_options_for_select(@issue.assignable_users, @issue.assigned_to), :include_blank => true, :required => @issue.required_attribute?('assigned_to_id') %></p>
-<% end %>
+
+
+<%if @issue.assignable_users.length > 0%>
+<p><%= f.select :assigned_to_id, principals_options_for_select(@issue.assignable_users, @issue.assigned_to), :include_blank => false, :required => true %></p>
+
+    <%else%>
+     <p><%= f.select :assigned_to_id, principals_options_for_select(@issue.assignable_users, @issue.assigned_to), :include_blank => false, :required => false %></p>
+    <% end %>
+
+<%end%>
 
 <% if @issue.safe_attribute?('category_id') && @issue.project.issue_categories.any? %>
 <p><%= f.select :category_id, (@issue.project.issue_categories.collect {|c| [c.name, c.id]}), :include_blank => true, :required => @issue.required_attribute?('category_id') %>
